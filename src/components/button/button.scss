@@ -1,0 +1,37 @@
+@import "../../util/colors.scss";
+.button {
+  color: white;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  padding: 12px 24px;
+  border: 1px solid $primary-dark;
+  float: right;
+  background-color: $primary-dark;
+  outline: none;
+  white-space: nowrap;
+  font-weight: 700;
+  pointer-events: all;
+  cursor: pointer;
+  &:hover {
+    background-color: $primary-mid;
+  }
+}
+@media (max-width: 1024px) {
+  .button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+}
+@media (max-width: 750px) {
+  .button {
+    color: $gray-mid;
+    background-color: $primary-dark;
+  }
+}
+@media (max-width: 530px) {
+  .button {
+    color: $gray-mid;
+    background-color: $primary-dark;
+  }
+}

@@ -1,0 +1,149 @@
+@import "../../util/colors.scss";
+.page {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  text-align: left;
+  background-color: $gray-mid;
+  &__wrapper {
+    color: $white-dark;
+    margin: auto 15%;
+    line-height: 1.3;
+    position: relative;
+  }
+  &__content {
+    max-height: 80vh;
+    overflow: auto;
+    display: flex;
+  }
+  &__heading {
+    position: relative;
+    display: inline-block;
+    .tag {
+      &--top {
+        left: -40px;
+        top: 0px;
+      }
+      &--bottom {
+        bottom: 0px;
+        left: 100%;
+      }
+    }
+  }
+  &__h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 64px;
+    span {
+      display: inline-block;
+      transition: color 0.3s linear;
+      pointer-events: all;
+    }
+  }
+  &__h2 {
+    color: $white-dark;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+.tag {
+  font-family: "Shadows Into Light", cursive;
+  color: $white-dark;
+  font-size: 16px;
+  position: absolute;
+  left: 40px;
+  letter-spacing: 5px;
+  &--top {
+    top: 60px;
+  }
+  &--bottom {
+    bottom: 60px;
+  }
+}
+.particles {
+  position: absolute;
+}
+
+@media (max-width: 1024px) {
+  .page {
+    &__h1 {
+      font-size: 54px;
+      line-height: 74px;
+    }
+    &__h2 {
+      font-size: 14px;
+    }
+  }
+  .tag {
+    font-size: 14px;
+    left: 25px;
+    letter-spacing: 5px;
+    &--top {
+      top: 50px;
+    }
+    &--bottom {
+      bottom: 50px;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .page {
+    height: calc(100% - 60px);
+    width: 100%;
+    margin-top: 60px;
+    margin-left: 0px;
+    &__h1 {
+      font-size: 47px;
+      line-height: 60px;
+    }
+    &__h2 {
+      font-size: 14px;
+    }
+    &__heading {
+      .tag {
+        &--top {
+          left: -30px;
+          top: 00px;
+        }
+      }
+    }
+  }
+
+  .tag {
+    font-size: 12px;
+    left: 10px;
+    &--top {
+      top: 40px;
+    }
+    &--bottom {
+      bottom: 40px;
+    }
+  }
+}
+@media (max-width: 530px) {
+  .page {
+    height: 100%;
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    &__h1 {
+      font-size: 35px;
+      line-height: 45px;
+    }
+    &__h2 {
+      font-size: 14px;
+    }
+  }
+  .tag {
+    font-size: 12px;
+    left: 10px;
+    &--top {
+      top: 20px;
+    }
+    &--bottom {
+      bottom: 20px;
+    }
+  }
+}

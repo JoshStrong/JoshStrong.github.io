@@ -1,0 +1,115 @@
+@import "../../util/colors.scss";
+.navBar {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  &__socialItem {
+    margin: 0 15px;
+    svg {
+      position: absolute;
+      left: calc(50% - 9px);
+      opacity: 1;
+      transition: all 0.3s;
+      fill: $white-dark;
+    }
+    &:hover {
+      svg {
+        fill: $secondary-dark;
+      }
+    }
+    position: relative;
+    transition: all 0.3s;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 25px 0;
+    color: white;
+    margin-bottom: 15px;
+  }
+  &__navItem {
+    position: relative;
+    transition: all 0.3s;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 25px 0;
+    color: white;
+    margin-bottom: 15px;
+    h3 {
+      margin: 0;
+      opacity: 0;
+      font-weight: normal;
+      transition: all 0.3s;
+      font-size: 12px;
+    }
+    &:hover {
+      h3 {
+        opacity: 1;
+        color: $secondary-light;
+      }
+      svg {
+        opacity: 0;
+        fill: $secondary-light;
+      }
+    }
+    svg {
+      position: absolute;
+      left: calc(50% - 14px);
+      opacity: 1;
+      transition: all 0.3s;
+      fill: $white-dark;
+    }
+    &--active {
+      color: $secondary-dark;
+      svg {
+        fill: $secondary-dark;
+      }
+    }
+  }
+}
+.socialBar {
+  position: fixed;
+  bottom: 0px;
+  left: 25px;
+}
+.navBar__nav {
+  position: fixed;
+  top: 0px;
+  right: 25px;
+}
+.logo {
+  font-size: 28px;
+  position: fixed;
+  top: 29px;
+  left: 65px;
+  span {
+    color: $secondary-mid;
+  }
+}
+@media (max-width: 750px) {
+  .navBar {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    flex-direction: row;
+    ul li {
+      float: right;
+      height: 60px;
+      margin: 0 10px;
+    }
+  }
+}
+@media (max-width: 530px) {
+  .navBar {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,83 @@
+@import "../../util/colors.scss";
+.textarea {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  textarea {
+    width: 100%;
+    border: 0;
+    background: $gray-dark;
+    color: $white-light;
+    height: 250px;
+    font-size: 14px;
+    padding: 0 20px;
+    padding-top: 30px;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+    &:focus + .textarea__label .textarea__labelContent,
+    &:not(:placeholder-shown) + .textarea__label .textarea__labelContent {
+      transform: translate(-12px, -12px);
+      font-size: 12px;
+      color: $primary-dark;
+    }
+    &:focus + .textarea__label::after {
+      transform: translateX(0%);
+    }
+  }
+  &__label {
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    left: 0px;
+    font-size: 16px;
+    pointer-events: none;
+    text-align: left;
+    height: 100%;
+    color: $white-dark;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      border-bottom: 3px solid $primary-dark;
+      left: 0px;
+      bottom: 0px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    &Content {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      transition: all 0.3s ease;
+    }
+  }
+  &__label--errorIndicator {
+    position: absolute;
+    width: 100%;
+    border-bottom: 3px solid $secondary-dark;
+    left: 0px;
+    bottom: 0px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 2;
+  }
+  &__label--error {
+    position: absolute;
+    width: 100%;
+    right: 5px;
+    top: 5px;
+    font-size: 12px;
+    color: $secondary-dark;
+    transition: transform 0.3s ease;
+    z-index: 2;
+    text-align: right;
+  }
+}
+@media (max-width: 530px) {
+  .textarea {
+    textarea {
+      height: 200px;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@import "./util/colors.scss";
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  user-select: none;
+}
+p {
+  font-size: 16px;
+}
+ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  li {
+    margin: 15px;
+    display: inline-block;
+  }
+  margin: 0;
+  .half {
+    width: 49%;
+    margin-left: 2%;
+    clear: none;
+  }
+  .half:first-child {
+    margin-left: 0;
+  }
+}
+.flexContainer {
+  display: flex;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $gray-dark;
+}
+
+@media (max-width: 1024px) {
+  p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 750px) {
+  .flexContainer {
+    flex-direction: column;
+  }
+  ul {
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 20px;
+
+    .half {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 530px) {
+  p {
+    font-size: 14px;
+  }
+}

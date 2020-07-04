@@ -1,0 +1,41 @@
+.button {
+  color: white;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  padding: 12px 24px;
+  border: 1px solid #0e1a88;
+  float: right;
+  background-color: #0e1a88;
+  outline: none;
+  white-space: nowrap;
+  font-weight: 700;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #1120a5;
+}
+
+@media (max-width: 1024px) {
+  .button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+}
+
+@media (max-width: 750px) {
+  .button {
+    color: #ffffff;
+    background-color: #0e1a88;
+  }
+}
+
+@media (max-width: 530px) {
+  .button {
+    color: #ffffff;
+    background-color: #0e1a88;
+  }
+}
+/*# sourceMappingURL=button.css.map */

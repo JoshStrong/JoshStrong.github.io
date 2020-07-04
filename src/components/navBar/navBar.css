@@ -1,0 +1,151 @@
+.navBar {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navBar__socialItem {
+  margin: 0 15px;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  padding: 25px 0;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.navBar__socialItem svg {
+  position: absolute;
+  left: calc(50% - 9px);
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  fill: #181529;
+}
+
+.navBar__socialItem:hover svg {
+  fill: #1120a5;
+}
+
+.navBar__navItem {
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  padding: 25px 0;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.navBar__navItem h3 {
+  margin: 0;
+  opacity: 0;
+  font-weight: normal;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 12px;
+}
+
+.navBar__navItem:hover h3 {
+  opacity: 1;
+  color: #1120a5;
+}
+
+.navBar__navItem:hover svg {
+  opacity: 0;
+  fill: #1120a5;
+}
+
+.navBar__navItem svg {
+  position: absolute;
+  left: calc(50% - 14px);
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  fill: #181529;
+}
+
+.navBar__navItem--active {
+  color: #1120a5;
+}
+
+.navBar__navItem--active svg {
+  fill: #1120a5;
+}
+
+.socialBar {
+  position: fixed;
+  bottom: 0px;
+  left: 25px;
+}
+
+.navBar__nav {
+  position: fixed;
+  top: 0px;
+  right: 25px;
+}
+
+.logo {
+  font-size: 28px;
+  position: fixed;
+  top: 29px;
+  left: 65px;
+}
+
+.logo span {
+  color: #1120a5;
+}
+
+@media (max-width: 750px) {
+  .navBar {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .navBar ul li {
+    float: right;
+    height: 60px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 530px) {
+  .navBar {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=navBar.css.map */
