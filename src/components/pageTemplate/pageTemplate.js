@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import gsap from "gsap/gsap-core";
 import "./page.css";
 import { rubberBand } from "../../util/animations";
-import Particles from "react-particles-js";
 export default function PageTemplate(props) {
   let isCharAnimating = [];
   for (let i = 0; i < props.headingRows.length; i++) {
@@ -62,43 +61,6 @@ export default function PageTemplate(props) {
   }, []);
   return (
     <div className="page">
-      <Particles
-        canvasClassName="particles"
-        height="100%"
-        width="100%"
-        params={{
-          particles: {
-            number: {
-              value: 50,
-            },
-            opacity: {
-              value: 1,
-              random: true,
-            },
-            size: {
-              value: 5,
-            },
-            color: {
-              value: "#0E1A88",
-            },
-            links: {
-              color: "#181529",
-              width: 0,
-            },
-            move: {
-              speed: 2,
-            },
-          },
-          interactivity: {
-            events: {
-              onhover: {
-                enable: true,
-                mode: "repulse",
-              },
-            },
-          },
-        }}
-      />
       <div className="page__wrapper">
         <div className="page__heading">
           <h1 className="page__h1">

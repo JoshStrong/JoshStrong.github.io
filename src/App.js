@@ -12,6 +12,7 @@ import { ReactComponent as HomeSvg } from "./assets/svg/home.svg";
 import { ReactComponent as UserSvg } from "./assets/svg/user.svg";
 import { ReactComponent as KeyboardSvg } from "./assets/svg/keyboard.svg";
 import { ReactComponent as ScreenSvg } from "./assets/svg/screen.svg";
+import Particles from "react-particles-js";
 import { ReactComponent as PhoneSvg } from "./assets/svg/phone.svg";
 function App() {
   const pages = [
@@ -30,6 +31,43 @@ function App() {
         pages={pages}
         changePage={setActiveIndex}
         activeIndex={activeIndex}
+      />
+      <Particles
+        canvasClassName="particles"
+        height="100vh"
+        width="100vw"
+        params={{
+          particles: {
+            number: {
+              value: 50,
+            },
+            opacity: {
+              value: 1,
+              random: true,
+            },
+            size: {
+              value: 5,
+            },
+            color: {
+              value: "#0E1A88",
+            },
+            links: {
+              color: "#181529",
+              width: 0,
+            },
+            move: {
+              speed: 2,
+            },
+          },
+          interactivity: {
+            events: {
+              onhover: {
+                enable: true,
+                mode: "repulse",
+              },
+            },
+          },
+        }}
       />
       {pages.map((page, index) => {
         return (
@@ -55,7 +93,7 @@ function App() {
               gsap.to(node, {
                 duration: 0.5,
                 scale: 0.9,
-                opacity: 0.8,
+                opacity: 0,
                 zIndex: 0,
                 transformOrigin: "50% 50%",
               });
