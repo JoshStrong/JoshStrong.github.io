@@ -9,9 +9,12 @@
   background-color: transparent;
   &__wrapper {
     color: $white-dark;
-    margin: auto 15%;
+    display: flex;
     line-height: 1.3;
     position: relative;
+    flex-direction: column;
+    margin: 75px 65px;
+    width: calc(100% - 130px);
   }
   &__content {
     max-height: 80vh;

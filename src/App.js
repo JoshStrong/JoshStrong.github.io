@@ -24,7 +24,7 @@ function App() {
   const completeCall = (target) => {
     gsap.set(target, { clearProps: "x, position" });
   };
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(2);
   return (
     <div className="App">
       <NavBar
