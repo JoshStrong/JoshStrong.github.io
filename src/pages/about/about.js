@@ -8,7 +8,7 @@ export default function About(props) {
       <div className={"about"}>
         <p>
           I'm currently completing an MSc in Data Science at UCL, and looking
-          for oppertunities in data science and machine learning across England.
+          for opportunities in data science and machine learning across England.
         </p>
         <Button label="View Resumé" />
       </div>

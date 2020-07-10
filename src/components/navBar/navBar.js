@@ -8,7 +8,7 @@ export default function NavBar(props) {
   return (
     <div className="navBar">
       <div className="logo">
-        J<span>S</span>
+        Josh<span>Strong</span>
       </div>
       <ul className="navBar__nav">
         {props.pages.map((page, index) => {
