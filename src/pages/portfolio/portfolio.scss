@@ -1,0 +1,41 @@
+@import "../../util/colors.scss";
+.projectContainer {
+  display: flex;
+  &__navigation {
+    width: 30%;
+  }
+  &__projectInfo {
+    width: 50%;
+  }
+  &__navigationItem {
+    height: 45px;
+    z-index: 10;
+    pointer-events: all;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-left: 3px solid transparent;
+    transition: 0.3s all;
+
+    svg {
+      padding: 0 15px;
+    }
+    &--active {
+      border-left: 3px solid $primary-mid;
+    }
+  }
+  &__projectInfoHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $primary-mid;
+    a {
+      z-index: 10;
+      pointer-events: all;
+    }
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
