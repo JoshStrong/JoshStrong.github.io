@@ -8,16 +8,22 @@ export default function Portfolio(props) {
   const [projectIndex, setProjectIndex] = useState(0);
   const projects = [
     {
+      title: "Model-Agnostic Meta-Learning for Few-Shot Deep Learning",
+      link: "https://github.com/JoshStrong/MAML",
+      info:
+        "This project involved implementing the few-shot meta-learning algorithm MAML, of which helps deep learning models quickly adapt to machine learning problems with small amounts of data. I original experimental studies conducted in the academic article which presented MAML, but added extra complexity to see how well this algorithm truly copes. This work was written in Python.",
+    },
+    {
       title: "CNN-tuning",
       link: "https://github.com/JoshStrong/CNN-tuning/",
       info:
-        "This notebook includes tuning hyperparameters of a convolutional neural network to optimise for minimal cross-entropy loss. In doing so, 9 model variants are developed with increasing generalisation performance. The final model involves 3x3 filters with 99.44% validation accuracy, 99.18% testing accuracy and 100% training accuracy.",
+        "Written in Julia, this notebook includes tuning hyperparameters of a convolutional neural network to optimise for minimal cross-entropy loss. In doing so, 9 model variants are developed with increasing generalisation performance. The final model involves 3x3 filters with 99.44% validation accuracy, 99.18% testing accuracy and 100% training accuracy.",
     },
     {
       title: "2 Layer MLP from scratch",
-      link: "https://github.com/JoshStrong/CNN-tuning/",
+      link: "https://github.com/JoshStrong/2LayerMLP",
       info:
-        "This notebook includes programming a 2 layer MLP from scratch in Julia, including optimisation techniques such as SGD, mini-batch gradient descent and momentum.",
+        "This notebook implements a 2 layer MLP from scratch, without using any autodiff libraries. Various methods of optimisation are then implemented and applied to optimise instances of the network, with a grid search used to find optimial hyperparamters based on performance on a validation data set. Although not the most efficient implementation, this notebook is a simple demonstration with primary purpose to further my understanding on the mathematics & theory of deep learning.",
     },
   ];
   return (
