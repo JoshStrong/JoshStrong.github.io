@@ -1,5 +1,63 @@
-.contactForm {
-  li {
-    display: inline;
+@import "../../util/colors.scss";
+.Contact {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  h2 {
+    margin: 0px 0px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  &__FormContainer {
+    width: 550px;
+    padding: 30px;
+  }
+  &__ButtonContainer {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    button {
+      pointer-events: all;
+      z-index: 100;
+      background-color: $primary-dark;
+      outline: none;
+      border: none;
+      width: 120px;
+      height: 40px;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+  &__FormSplit {
+    display: flex;
+    justify-content: space-between;
+    .input {
+      width: calc(50% - 8px);
+    }
+  }
+  &__SuccessContainer,
+  &__ErrorContainer,
+  &__LoadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 75px;
+    flex-direction: column;
+  }
+  &__LoadingTextContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h3 {
+      margin: 0px;
+      opacity: 0.5;
+    }
+    h2 {
+      margin: 0;
+      margin-top: 15px;
+    }
   }
 }

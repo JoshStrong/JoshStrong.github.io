@@ -6,9 +6,10 @@ export default function Home(props) {
   return (
     <PageTemplate
       headingRows={["Hello,", "I'm Josh", "Data Scientist."]}
-      subHeading="UCL MSc Data Science student"
+      subHeading="UCL MSc Data Science graduate"
+      centered
     >
-      <Button label="CONTACT ME" />
+      <Button label="CONTACT ME" onClick={props.toContact} />
     </PageTemplate>
   );
 }

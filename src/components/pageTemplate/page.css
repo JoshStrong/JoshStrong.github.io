@@ -25,6 +25,12 @@
   width: calc(100% - 130px);
 }
 
+.page__wrapper--centered {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .page__content {
   max-height: 80vh;
   overflow: auto;

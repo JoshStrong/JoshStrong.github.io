@@ -6,11 +6,15 @@ export default function About(props) {
   return (
     <PageTemplate headingRows={["About Me"]}>
       <div className={"about"}>
+        <p>Hello! I'm Josh, a data scientist based in Manchester, UK.</p>
         <p>
-          I'm currently completing an MSc in Data Science at UCL, and looking
-          for opportunities in data science and machine learning across England.
+          I have a great passion for all things data, statistics and computer
+          science. I'm currently finishing an MSc in Data Science at UCL, and
+          actively looking for opportunities in data science and machine
+          learning across the UK.
         </p>
-        <Button label="View Resumé" />
+        <p>Please get in touch for a copy of my CV.</p>
+        <Button label="CONTACT ME" />
       </div>
     </PageTemplate>
   );

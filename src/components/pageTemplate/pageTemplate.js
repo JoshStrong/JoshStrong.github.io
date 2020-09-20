@@ -61,7 +61,13 @@ export default function PageTemplate(props) {
   }, []);
   return (
     <div className="page">
-      <div className="page__wrapper">
+      <div
+        className={
+          props.centered
+            ? "page__wrapper page__wrapper--centered"
+            : "page__wrapper"
+        }
+      >
         <div className="page__heading">
           <h1 className="page__h1">
             {props.headingRows.map((row, rowIndex) => {

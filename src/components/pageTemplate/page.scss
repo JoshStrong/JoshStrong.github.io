@@ -15,6 +15,9 @@
     flex-direction: column;
     margin: 75px 65px;
     width: calc(100% - 130px);
+    &--centered {
+      justify-content: center;
+    }
   }
   &__content {
     max-height: 80vh;

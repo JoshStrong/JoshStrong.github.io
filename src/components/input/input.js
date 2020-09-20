@@ -4,21 +4,23 @@ export default function Input(props) {
   return (
     <div className="input">
       <input
-        value={props.value.input}
         placeholder=" "
         onClick={props.removeError}
         type={props.type}
         name={props.name}
         onChange={props.onChange}
-        autocomplete="off"
+        autoComplete="off"
+        ref={props.register}
       />
       <label className="input__label">
         <span className="input__labelContent">{props.placeholder}</span>
         <label
           className="input__label--errorIndicator"
-          style={{ transform: props.value.isError ? "translateX(0%)" : "" }}
+          style={{ transform: props.error ? "translateX(0%)" : "" }}
         ></label>
-        <span className="input__label--error">{props.value.errorMsg}</span>
+        {props.error && (
+          <span className="input__label--error">{props.error.message}</span>
+        )}
       </label>
     </div>
   );

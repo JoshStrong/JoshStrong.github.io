@@ -1,128 +1,123 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./contact.css";
-import PageTemplate from "../../components/pageTemplate/pageTemplate";
 import Input from "../../components/input/input";
 import Textarea from "../../components/textarea/textarea";
-import Button from "../../components/button/button";
+import { useForm } from "react-hook-form";
+import emailjs from "emailjs-com";
+
 export default function Contact(props) {
-  const [contactForm, setContactForm] = useState({
-    name: { input: "", isError: false, errorMsg: "" },
-    email: { input: "", isError: false, errorMsg: "" },
-    subject: { input: "", isError: false, errorMsg: "" },
-    message: { input: "", isError: false, errorMsg: "" },
-  });
+  const { register, handleSubmit, errors } = useForm();
+  const [isLoading, setIsLoading] = useState(0);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  const handleInputChange = (event) => {
-    let tempContactForm = { ...contactForm };
-    tempContactForm[event.target.name].input = event.target.value;
-    setContactForm(tempContactForm);
+  const onSubmit = (data) => {
+    console.log("adawda");
+    showLoading();
+    try {
+      emailjs
+        .send(
+          "service_byshotq",
+          "template_8pm6kf7",
+          data,
+          "user_VDt0Pqn9PWLIXLzZRmO4x"
+        )
+        .then(
+          (result) => {
+            setIsSuccess(true);
+          },
+          (error) => {
+            console.log(error);
+            setIsError(true);
+          }
+        );
+    } catch {
+      setIsError(true);
+    }
   };
 
-  const removeError = (event) => {
-    let tempContactForm = { ...contactForm };
-    tempContactForm[event.target.name] = {
-      ...tempContactForm[event.target.name],
-      isError: false,
-      errorMsg: "",
-    };
-    setContactForm(tempContactForm);
-  };
-
-  const validateForm = (event) => {
-    let tempContactForm = { ...contactForm };
-    console.log(tempContactForm);
-    tempContactForm.name =
-      tempContactForm.name.input.length === 0
-        ? {
-            input: tempContactForm.name.input,
-            isError: true,
-            errorMsg: "Please enter your name.",
-          }
-        : tempContactForm.name;
-    tempContactForm.email =
-      tempContactForm.email.input.length === 0
-        ? {
-            input: tempContactForm.email.input,
-            isError: true,
-            errorMsg: "Please enter your email.",
-          }
-        : tempContactForm.email;
-    tempContactForm.subject =
-      tempContactForm.subject.input.length === 0
-        ? {
-            input: tempContactForm.subject.input,
-            isError: true,
-            errorMsg: "Please enter a subject.",
-          }
-        : tempContactForm.subject;
-    tempContactForm.message =
-      tempContactForm.message.input.length === 0
-        ? {
-            input: tempContactForm.message.input,
-            isError: true,
-            errorMsg: "Please enter a message.",
-          }
-        : tempContactForm.message;
-    setContactForm(tempContactForm);
+  const showLoading = () => {
+    setIsLoading(true);
   };
 
   return (
-    <PageTemplate headingRows={["Contact Me"]}>
-      <div>
-        <p>
-          Cillum labore ullamco nostrud aute commodo eiusmod nostrud in nisi
-          eiusmod irure sit. Culpa eiusmod qui labore ea aute et id culpa.
-          Cillum labore consectetur adipisicing fugiat Lorem laboris.
-        </p>
-        <ul className={"contactForm"}>
-          <li>
-            <div className={"flexContainer"}>
-              <div className="half">
-                <Input
-                  placeholder="Name"
-                  value={contactForm.name}
-                  name="name"
-                  removeError={removeError.bind(this)}
-                  type="text"
-                  onChange={handleInputChange.bind(this)}
-                />
-              </div>
-              <div className="half">
-                <Input
-                  placeholder="Email"
-                  value={contactForm.email}
-                  name="email"
-                  removeError={removeError.bind(this)}
-                  type="email"
-                  onChange={handleInputChange.bind(this)}
-                />
-              </div>
+    <div className="Contact">
+      {isLoading ? (
+        <div className="Contact__LoadingContainer">
+          {/* <AnimatedEnvelope isSuccess={isSuccess} isError={isError} /> */}
+          <div className="Contact__LoadingTextContainer">
+            {isError ? (
+              <>
+                <h2>Oops.. Something went wrong..</h2>
+                <h3>Please try again, or email me at strongjosh@gmail.com</h3>
+              </>
+            ) : isSuccess ? (
+              <>
+                <h2 style={{ color: "#4CA450" }}>
+                  <span style={{ opacity: "0.6" }}>Signed.</span>{" "}
+                  <span style={{ opacity: "0.8" }}>Sealed.</span>{" "}
+                  <span style={{ opacity: "1" }}>Delivered.</span>
+                </h2>
+                <h3>
+                  Thank you for your message. I'll get back to you shortly.
+                </h3>
+              </>
+            ) : (
+              <>
+                <h2>Sending Message...</h2>
+                <h3>Just a second</h3>
+              </>
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="Contact__FormContainer">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <h2>Contact Me</h2>
+            <div className="Contact__FormSplit">
+              <Input
+                placeholder="Name"
+                name="name"
+                register={register({
+                  required: "Required",
+                })}
+                error={errors.name}
+              ></Input>
+              <Input
+                placeholder="Email"
+                name="email"
+                register={register({
+                  required: "Required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Invalid email address",
+                  },
+                })}
+                error={errors.email}
+              ></Input>
             </div>
-          </li>
-          <li>
             <Input
               placeholder="Subject"
-              value={contactForm.subject}
               name="subject"
-              removeError={removeError.bind(this)}
-              type="text"
-              onChange={handleInputChange.bind(this)}
-            />
-          </li>
-          <li>
+              register={register({
+                required: "Required",
+              })}
+              error={errors.subject}
+            ></Input>
             <Textarea
               placeholder="Message"
-              value={contactForm.message}
               name="message"
-              removeError={removeError.bind(this)}
-              onChange={handleInputChange.bind(this)}
+              register={register({
+                required: "Required",
+              })}
+              error={errors.message}
             />
-          </li>
-          <li>
-            <Button label="Submit" onClick={validateForm} />
-          </li>
-        </ul>
-      </div>
-    </PageTemplate>
+            <div className="Contact__ButtonContainer">
+              <button>Submit</button>
+            </div>
+          </form>
+        </div>
+      )}
+    </div>
   );
 }

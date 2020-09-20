@@ -6,8 +6,8 @@
   input {
     width: 100%;
     border: 0;
-    background: $gray-dark;
-    color: $white-light;
+    background: rgba(0, 0, 0, 0.041);
+    color: black;
     height: 60px;
     font-size: 14px;
     padding: 0 20px;
@@ -17,7 +17,7 @@
     &:focus + .input__label .input__labelContent,
     &:not(:placeholder-shown) + .input__label .input__labelContent {
       transform: translate(-12px, -20px);
-      font-size: 12px;
+      font-size: 14px;
       color: $primary-dark;
     }
     &:focus + .input__label::after {
@@ -33,12 +33,12 @@
     pointer-events: none;
     text-align: left;
     height: 100%;
-    color: $white-dark;
+    color: black;
     &::after {
       content: "";
       position: absolute;
       width: 100%;
-      border-bottom: 3px solid $primary-dark;
+      border-bottom: 5px solid $primary-dark;
       left: 0px;
       bottom: 0px;
       transform: translateX(-100%);
@@ -54,7 +54,7 @@
   &__label--errorIndicator {
     position: absolute;
     width: 100%;
-    border-bottom: 3px solid $secondary-dark;
+    border-bottom: 5px solid red;
     left: 0px;
     bottom: 0px;
     transform: translateX(-100%);
@@ -66,8 +66,8 @@
     width: 100%;
     right: 5px;
     top: 3px;
-    font-size: 12px;
-    color: $secondary-dark;
+    font-size: 14px;
+    color: red;
     transition: transform 0.3s ease;
     z-index: 2;
     text-align: right;

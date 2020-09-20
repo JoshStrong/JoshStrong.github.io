@@ -16,7 +16,11 @@ import Particles from "react-particles-js";
 import { ReactComponent as PhoneSvg } from "./assets/svg/phone.svg";
 function App() {
   const pages = [
-    { name: "Home", comp: <Home />, icon: <HomeSvg /> },
+    {
+      name: "Home",
+      comp: <Home toContact={() => setActiveIndex(3)} />,
+      icon: <HomeSvg />,
+    },
     { name: "About", comp: <About />, icon: <UserSvg /> },
     { name: "Portfolio", comp: <Portfolio />, icon: <ScreenSvg /> },
     { name: "Contact", comp: <Contact />, icon: <PhoneSvg /> },
