@@ -11,7 +11,7 @@ export default function Portfolio(props) {
       title: "Model-Agnostic Meta-Learning for Few-Shot Deep Learning",
       link: "https://github.com/JoshStrong/MAML",
       info:
-        "This project involved implementing the few-shot meta-learning algorithm MAML, of which helps deep learning models quickly adapt to machine learning problems with small amounts of data. I original experimental studies conducted in the academic article which presented MAML, but added extra complexity to see how well this algorithm truly copes. This work was written in Python.",
+        "This project involved implementing the few-shot meta-learning algorithm MAML, of which helps deep learning models quickly adapt to machine learning problems with small amounts of data. I implement an original experimental study conducted in the academic article which presented MAML, but added extra complexity to see how well this algorithm truly copes. This work was written in Python.",
     },
     {
       title: "CNN-tuning",

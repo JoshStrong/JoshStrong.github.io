@@ -10,7 +10,7 @@ export default function About(props) {
         <p>
           I have a great passion for all things data, statistics. computer
           science and technology. I hold a first-class BSc in Mathematics, and
-          I've just graduated from with an MSc in Data Science from UCL.
+          I've just graduated with an MSc in Data Science from UCL.
         </p>
         <p>
           When I'm not spending time doing the above, I'm usually on a long walk
